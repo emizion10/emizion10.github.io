@@ -1,0 +1,67 @@
+.experience {
+  padding: 5rem 2rem;
+  background: #2a2a2a;
+  color: white;
+}
+
+.experience h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #64ffda;
+}
+
+.experience-timeline {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.experience-item {
+  display: flex;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  gap: 2rem;
+}
+
+.experience-period {
+  min-width: 150px;
+  color: #64ffda;
+  font-weight: bold;
+  padding-top: 0.25rem;
+}
+
+.experience-content {
+  flex: 1;
+}
+
+.experience-content h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.experience-content h4 {
+  margin: 0.5rem 0;
+  color: #64ffda;
+  font-size: 1.1rem;
+}
+
+.experience-content p {
+  margin: 0.8rem 0 0.3rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .experience-item {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .experience-period {
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(100, 255, 218, 0.2);
+  }
+} 

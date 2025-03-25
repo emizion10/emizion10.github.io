@@ -1,0 +1,45 @@
+.education {
+  padding: 5rem 2rem;
+  background: #1a1a1a;
+  color: white;
+}
+
+.education h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #64ffda;
+}
+
+.education-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.education-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.education-period {
+  color: #64ffda;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.education-content h3 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.education-content h4 {
+  color: #64ffda;
+  margin: 0.5rem 0;
+}
+
+.education-content p {
+  line-height: 1.6;
+  margin: 0.5rem 0;
+} 
