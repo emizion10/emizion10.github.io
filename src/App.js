@@ -7,7 +7,7 @@ import Experience from './components/experience/Experience';
 import Education from './components/education/Education';
 import Projects from './components/projects/Projects';
 import Skills from './components/skills/Skills';
-import Blog from './components/blog/Blog';
+// import Blog from './components/blog/Blog';
 import Footer from './components/footer/Footer';
 import './App.css';
 
@@ -19,10 +19,10 @@ function App() {
         <Hero />
         <About />
         <Experience />
+        <Skills />
         <Education />
         <Projects />
-        <Skills />
-        <Blog />
+        {/* <Blog /> */}
         <Footer />
       </div>
     </Router>

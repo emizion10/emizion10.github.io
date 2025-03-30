@@ -1,7 +1,14 @@
 export const profile = {
   name: "Amal Sukumaran",
   title: "Software Engineer",
-  bio: "Full-Stack Software Engineer with expertise in React, React Native, and NestJS. Currently working at H2Digital GmbH, driving the development of intelligent web applications for the hydrogen industry. Recently completed an M.Sc. in Computer Science from RPTU in Germany.",
+  bio: "Full-Stack Software Engineer with expertise in React, React Native, and NestJS. Currently working at H2Digital GmbH, driving the development of intelligent web applications for the hydrogen industry.",
+  aboutMe: "I am a passionate Software Engineer with a strong foundation in full-stack development. Having completed my M.Sc. in Computer Science from RPTU in Germany, I bring both academic excellence and practical experience to my work. My journey has taken me from developing healthcare systems with machine learning to creating intelligent web applications for the hydrogen industry. I thrive on challenging projects that combine innovative technology with real-world impact.",
+  interests: [
+    "Full Stack Web Development",
+    "Mobile App Development",
+    "Cloud Architecture & DevOps",
+    "AI & Machine Learning"
+  ],
   social: {
     linkedin: "https://linkedin.com/in/amal-sukumaran",
     github: "https://github.com/amalsukumaran",

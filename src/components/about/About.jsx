@@ -22,7 +22,15 @@ const About = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <p>{profile.bio}</p>
+          <p>{profile.aboutMe}</p>
+          <p>
+            I'm particularly interested in:
+          </p>
+          <ul>
+            {profile.interests.map((interest, index) => (
+              <li key={index}>{interest}</li>
+            ))}
+          </ul>
         </motion.div>
         <motion.div 
           className="about-image"
@@ -31,7 +39,12 @@ const About = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <img src="https://via.placeholder.com/300" alt="Profile" />
+          <img 
+            src="/images/profile.jpeg" 
+            alt={profile.name} 
+            className="profile-image"
+          />
+          <div className="image-overlay"></div>
         </motion.div>
       </div>
     </motion.section>
