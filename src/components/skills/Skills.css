@@ -11,47 +11,107 @@
   color: #64ffda;
 }
 
-.skills-container {
+.skills h3 {
+  color: #64ffda;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+}
+
+.skills-column {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.skill-bar-container {
+  margin-bottom: 1.5rem;
+}
+
+.skill-info {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.skill-bar {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #64ffda, #00b8d4);
+  border-radius: 4px;
+}
+
+.cloud-ai-section {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.devops-section, .ai-section {
+  margin-bottom: 3rem;
+}
+
+.cloud-providers, .ai-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
 }
 
-.skill-category {
-  flex: 1;
-  min-width: 250px;
+.devops-cloud {
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
-  padding: 2rem;
+  padding: 1.5rem;
+  border-radius: 10px;
 }
 
-.skill-category h3 {
+.devops-cloud h4 {
   color: #64ffda;
-  margin-bottom: 1.5rem;
-  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
 }
 
-.skill-items {
+.cloud-services {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
+  gap: 0.8rem;
 }
 
-.skill-tag {
+.cloud-tag {
   background: rgba(100, 255, 218, 0.1);
   color: #64ffda;
   padding: 0.5rem 1rem;
   border-radius: 20px;
-  font-size: 1rem;
-  display: inline-block;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.cloud-tag:hover {
+  background: rgba(100, 255, 218, 0.2);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
-  .skills-container {
-    flex-direction: column;
+  .skills {
+    padding: 3rem 1rem;
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cloud-providers, .ai-categories {
+    grid-template-columns: 1fr;
   }
 } 

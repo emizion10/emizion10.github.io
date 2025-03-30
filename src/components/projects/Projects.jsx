@@ -1,7 +1,7 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { profile } from '../../data/profile';
-import './Projects.css';
+import React from "react";
+import { motion } from "framer-motion";
+import { profile } from "../../data/profile";
+import "./Projects.css";
 
 const Projects = () => {
   return (
@@ -16,30 +16,42 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
-            whileHover={{ 
+            whileHover={{
               y: -10,
-              boxShadow: "0 10px 20px rgba(100, 255, 218, 0.2)"
+              boxShadow: "0 10px 20px rgba(100, 255, 218, 0.2)",
             }}
           >
             <div className="project-content">
               <div className="project-header">
                 <i className="fas fa-folder-open project-icon"></i>
-                <div className="project-links">
-                  <a href={project.link} target="_blank" rel="noopener noreferrer">
-                    <i className="fab fa-github"></i>
-                  </a>
-                  {project.demo && (
-                    <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                      <i className="fas fa-external-link-alt"></i>
+                {project.link && (
+                  <div className="project-links">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i className="fab fa-github"></i>
                     </a>
-                  )}
-                </div>
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i className="fas fa-external-link-alt"></i>
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
               <h3>{project.title}</h3>
               <p>{project.description}</p>
               <div className="project-technologies">
                 {project.technologies.map((tech, i) => (
-                  <span key={i} className="tech-tag">{tech}</span>
+                  <span key={i} className="tech-tag">
+                    {tech}
+                  </span>
                 ))}
               </div>
             </div>
@@ -50,4 +62,4 @@ const Projects = () => {
   );
 };
 
-export default Projects; 
+export default Projects;

@@ -55,34 +55,78 @@ export const profile = {
     }
   ],
   skills: {
-    languages: ["JavaScript", "TypeScript", "Python", "C", "C++", "Java"],
-    frameworks: ["React", "React Native", "Redux", "Recoil", "Zustand", "NodeJS", "NestJS", "Django"],
-    tools: ["Docker", "Redis", "Microsoft Azure", "GCP", "AWS", "Firebase", "PostgreSQL", "MySQL", "MSSQL", "MongoDB"]
+    languages: [
+      { name: "TypeScript", proficiency: 95 },
+      { name: "JavaScript", proficiency: 90 },
+      { name: "Python", proficiency: 80 },
+      { name: "C/C++", proficiency: 70 },
+      { name: "Java", proficiency: 65 }
+    ],
+    frontend: [
+      { name: "React Native", proficiency: 95 },
+      { name: "React", proficiency: 90 },
+      { name: "Redux", proficiency: 80 },
+      { name: "Recoil", proficiency: 80 },
+      { name: "Zustand", proficiency: 80 }
+    ],
+    backend: [
+      { name: "NestJS", proficiency: 90 },
+      { name: "NodeJS", proficiency: 85 },
+      { name: "Django", proficiency: 75 },
+      { name: "GraphQL", proficiency: 80 },
+      { name: "REST APIs", proficiency: 90 }
+    ],
+    databases: [
+      { name: "MySQL/MSSQL/PostgreSQL", proficiency: 90 },
+      { name: "Redis", proficiency: 85 },
+      { name: "MongoDB", proficiency: 80 },
+    ],
+    devops: {
+      azure: [
+        "App Services",
+        "Application Gateway",
+        "Azure Functions",
+        "Azure DevOps",
+      ],
+      tools: [
+        "Docker",
+        "CI/CD",
+        "Git",
+        "GitHub Actions"
+      ]
+    },
+    ai: {
+      frameworks: [
+        "Bot Framework SDK",
+        "Langchain",
+        "RAG",
+        "AI Agents"
+      ],
+      nlp: [
+        "Azure OpenAI",
+        "Azure AI Search",
+        "Azure Speech Service",
+        "Azure Language Studio"
+      ]
+    }
   },
   projects: [
     {
       title: "Crop Disease Prediction with Limited Data",
       description: "MS thesis project focused on developing machine learning models for crop disease prediction with limited training data, using advanced techniques like transfer learning and data augmentation.",
       technologies: ["Python", "TensorFlow", "Computer Vision", "Machine Learning"],
-      link: "https://github.com/amalsukumaran/crop-disease-prediction"
+      link: "https://github.com/amal-sukumaran-rptu/FSL"
     },
     {
       title: "Computerised Healthcare System",
       description: "B.Tech final year project that integrated machine learning algorithms to improve healthcare diagnostics and patient management systems.",
       technologies: ["Python", "Django", "Machine Learning", "PostgreSQL"],
-      link: "https://github.com/amalsukumaran/healthcare-system"
+      link: "https://github.com/emizion10/healthcare"
     },
     {
       title: "E-commerce Component Library",
       description: "Developed a reusable component library for e-commerce applications following Test Driven Development principles, significantly reducing development time for new features.",
       technologies: ["React Native", "Jest", "Storybook"],
-      link: "https://github.com/amalsukumaran/ecommerce-components"
-    },
-    {
-      title: "Merchant Referral System",
-      description: "Implemented a comprehensive merchant-to-merchant referral system with deep linking capabilities, increasing user acquisition and engagement.",
-      technologies: ["React Native", "NestJS", "Branch.io", "GraphQL"],
-      link: "https://github.com/amalsukumaran/merchant-referral"
     }
   ]
 }; 
