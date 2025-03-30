@@ -126,7 +126,7 @@ This will build your app and publish it to the `gh-pages` branch of your reposit
 1. Go to your repository on GitHub
 2. Navigate to Settings > Pages
 3. Ensure the source is set to the `gh-pages` branch
-4. Your site will be published at `https://yourusername.github.io/portfolio-blog`
+4. Your site will be published at `https://yourusername.github.io/`
 
 ## Browser Compatibility
 

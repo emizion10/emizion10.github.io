@@ -1,7 +1,7 @@
 export const profile = {
   name: "Amal Sukumaran",
   title: "Software Engineer",
-  bio: "Experienced Software Engineer with expertise in full-stack development using React, React Native, and NestJS. Currently pursuing MS in Computer Science at RPTU in Germany while working part-time at CibusCell Technology GMBH.",
+  bio: "Full-Stack Software Engineer with expertise in React, React Native, and NestJS. Currently working at H2Digital GmbH, driving the development of intelligent web applications for the hydrogen industry. Recently completed an M.Sc. in Computer Science from RPTU in Germany.",
   social: {
     linkedin: "https://linkedin.com/in/amal-sukumaran",
     github: "https://github.com/amalsukumaran",
@@ -9,10 +9,16 @@ export const profile = {
   },
   experience: [
     {
+      company: "H2Digital GmbH",
+      position: "Software Engineer",
+      period: "Nov 2024 - Present",
+      description: "Built scalable backend services with NestJS and Redis caching, boosting performance by 30%. Developed AI chatbot using Bot Framework SDK and Azure OpenAI."
+    },
+    {
       company: "CibusCell Technology GMBH",
       position: "Software Engineer (Part Time)",
-      period: "May 2022 - Present",
-      description: "Engineered backend services with NestJS, implemented Redis caching improving performance by 30%, built modular UI components with React, and configured Azure services including CI/CD pipelines, Application Gateway, and Web Application Firewall."
+      period: "May 2022 - Oct 2024",
+      description: "Engineered backend services with NestJS, built modular UI components with React, and configured Azure services including CI/CD pipelines, Application Gateway, and Web Application Firewall."
     },
     {
       company: "KeyValue Software Systems",
@@ -31,8 +37,8 @@ export const profile = {
     {
       institution: "Rheinland-Pfälzische Technische Universität (RPTU)",
       degree: "MS in Computer Science",
-      period: "Apr 2022 - Present",
-      description: "Current Grade - 1.6, Thesis Project: Crop Disease Prediction with Limited Data"
+      period: "Apr 2022 - Oct 2024",
+      description: "Grade - 1.6, Thesis Project: Crop Disease Prediction with Limited Data"
     },
     {
       institution: "Mar Athanasius College Of Engineering",
