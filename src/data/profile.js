@@ -1,25 +1,24 @@
 export const profile = {
   name: "Amal Sukumaran",
   title: "Software Engineer",
-  bio: "Full-Stack Software Engineer with expertise in React, React Native, and NestJS. Currently working at H2Digital GmbH, driving the development of intelligent web applications for the hydrogen industry.",
-  aboutMe: "I am a passionate Software Engineer with a strong foundation in full-stack development. Having completed my M.Sc. in Computer Science from RPTU in Germany, I bring both academic excellence and practical experience to my work. My journey has taken me from developing healthcare systems with machine learning to creating intelligent web applications for the hydrogen industry. I thrive on challenging projects that combine innovative technology with real-world impact.",
+  bio: "Full-Stack Software Engineer with expertise in React, React Native, and NestJS. Currently working at CibusCell Technology GMBH, driving the development of intelligent web applications for the hydrogen industry.",
+  aboutMe: "I am a passionate Software Engineer with a strong foundation in full-stack development. Having completed my M.Sc. in Computer Science from RPTU in Germany, I bring both academic excellence and practical experience to my work. My journey spans developing healthcare systems with machine learning, building intelligent web applications for the hydrogen industry, and designing chatbots powered by multi-AI agents. I thrive on challenging projects that combine innovative technology with real-world impact.",
   interests: [
     "Full Stack Web Development",
+    "AI & Machine Learning",
     "Mobile App Development",
     "Cloud Architecture & DevOps",
-    "AI & Machine Learning"
   ],
   social: {
     linkedin: "https://linkedin.com/in/amal-sukumaran",
-    github: "https://github.com/amalsukumaran",
-    twitter: "https://twitter.com/amalsukumaran"
+    github: "https://github.com/emizion10",
   },
   experience: [
     {
-      company: "H2Digital GmbH",
+      company: "CibusCell Technology GMBH",
       position: "Software Engineer",
       period: "Nov 2024 - Present",
-      description: "Built scalable backend services with NestJS and Redis caching, boosting performance by 30%. Developed AI chatbot using Bot Framework SDK and Azure OpenAI."
+      description: "Built scalable backend services with NestJS and Redis caching, boosting performance by 30%. Developed AI chatbot using AI Agents (Semantic Kernel) and Azure OpenAI, enhancing user interaction."
     },
     {
       company: "CibusCell Technology GMBH",
@@ -45,7 +44,7 @@ export const profile = {
       institution: "Rheinland-Pfälzische Technische Universität (RPTU)",
       degree: "MS in Computer Science",
       period: "Apr 2022 - Oct 2024",
-      description: "Grade - 1.6, Thesis Project: Crop Disease Prediction with Limited Data"
+      description: "Grade - 1.6, Thesis: Crop Disease Prediction with Limited Data"
     },
     {
       institution: "Mar Athanasius College Of Engineering",
@@ -58,7 +57,7 @@ export const profile = {
     languages: [
       { name: "TypeScript", proficiency: 95 },
       { name: "JavaScript", proficiency: 90 },
-      { name: "Python", proficiency: 80 },
+      { name: "Python", proficiency: 90 },
       { name: "C/C++", proficiency: 70 },
       { name: "Java", proficiency: 65 }
     ],
@@ -97,10 +96,11 @@ export const profile = {
     },
     ai: {
       frameworks: [
-        "Bot Framework SDK",
-        "Langchain",
+        "AI Agents",
+        "Semantic Kernel",
         "RAG",
-        "AI Agents"
+        "Langchain",
+        "Bot Framework SDK",
       ],
       nlp: [
         "Azure OpenAI",
@@ -115,7 +115,7 @@ export const profile = {
       title: "Crop Disease Prediction with Limited Data",
       description: "MS thesis project focused on developing machine learning models for crop disease prediction with limited training data, using advanced techniques like transfer learning and data augmentation.",
       technologies: ["Python", "TensorFlow", "Computer Vision", "Machine Learning"],
-      link: "https://github.com/amal-sukumaran-rptu/FSL"
+      link: ""
     },
     {
       title: "Computerised Healthcare System",
