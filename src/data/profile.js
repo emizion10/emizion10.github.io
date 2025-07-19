@@ -1,7 +1,7 @@
 export const profile = {
   name: "Amal Sukumaran",
   title: "Software Engineer",
-  bio: "Full-Stack Software Engineer with expertise in React, React Native, and NestJS. Currently working at CibusCell Technology GMBH, driving the development of intelligent web applications for the hydrogen industry.",
+  bio: "Full-Stack Software Engineer with expertise in AI Agents, React, React Native, and NestJS. Currently working at CibusCell Technology GMBH, driving the development of intelligent web applications for the hydrogen industry.",
   aboutMe: "I am a passionate Software Engineer with a strong foundation in full-stack development. Having completed my M.Sc. in Computer Science from RPTU in Germany, I bring both academic excellence and practical experience to my work. My journey spans developing healthcare systems with machine learning, building intelligent web applications for the hydrogen industry, and designing chatbots powered by multi-AI agents. I thrive on challenging projects that combine innovative technology with real-world impact.",
   interests: [
     "Full Stack Web Development",
@@ -18,7 +18,7 @@ export const profile = {
       company: "CibusCell Technology GMBH",
       position: "Software Engineer",
       period: "Nov 2024 - Present",
-      description: "Built scalable backend services with NestJS and Redis caching, boosting performance by 30%. Developed AI chatbot using AI Agents (Semantic Kernel) and Azure OpenAI, enhancing user interaction."
+      description: " Developed AI chatbot using AI Agents (Semantic Kernel) and Azure OpenAI, enhancing user interaction. Built scalable backend services with NestJS and Redis caching, boosting performance by 30%."
     },
     {
       company: "CibusCell Technology GMBH",

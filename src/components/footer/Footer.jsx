@@ -16,7 +16,6 @@ const Footer = () => {
         >
           <a href={profile.social.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href={profile.social.github} target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href={profile.social.twitter} target="_blank" rel="noopener noreferrer">Twitter</a>
         </motion.div>
         <motion.p 
           className="footer-text"

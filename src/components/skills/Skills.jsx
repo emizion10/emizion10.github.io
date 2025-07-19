@@ -1,10 +1,10 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { profile } from '../../data/profile';
-import './Skills.css';
+import React from "react";
+import { motion } from "framer-motion";
+import { profile } from "../../data/profile";
+import "./Skills.css";
 
 const SkillBar = ({ skill, delay }) => (
-  <motion.div 
+  <motion.div
     className="skill-bar-container"
     initial={{ width: 0, opacity: 0 }}
     whileInView={{ width: "100%", opacity: 1 }}
@@ -16,7 +16,7 @@ const SkillBar = ({ skill, delay }) => (
       <span>{skill.proficiency}%</span>
     </div>
     <div className="skill-bar">
-      <motion.div 
+      <motion.div
         className="skill-progress"
         initial={{ width: 0 }}
         whileInView={{ width: `${skill.proficiency}%` }}
@@ -28,7 +28,7 @@ const SkillBar = ({ skill, delay }) => (
 );
 
 const DevOpsCloud = ({ title, items }) => (
-  <motion.div 
+  <motion.div
     className="devops-cloud"
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -38,7 +38,7 @@ const DevOpsCloud = ({ title, items }) => (
     <h4>{title}</h4>
     <div className="cloud-services">
       {items.map((item, index) => (
-        <motion.span 
+        <motion.span
           key={index}
           className="cloud-tag"
           initial={{ opacity: 0, scale: 0.5 }}
@@ -58,7 +58,7 @@ const Skills = () => {
   return (
     <section id="skills" className="skills">
       <h2>Skills & Technologies</h2>
-      
+
       <div className="skills-grid">
         <motion.div className="skills-column">
           <h3>Programming Languages</h3>
@@ -90,19 +90,27 @@ const Skills = () => {
       </div>
 
       <div className="cloud-ai-section">
-        <div className="devops-section">
-          <h3>DevOps & Cloud</h3>
-          <div className="cloud-providers">
-            <DevOpsCloud title="Azure Services" items={profile.skills.devops.azure} />
-            <DevOpsCloud title="DevOps Tools" items={profile.skills.devops.tools} />
-          </div>
-        </div>
-
         <div className="ai-section">
           <h3>AI & Machine Learning</h3>
           <div className="ai-categories">
-            <DevOpsCloud title="AI Frameworks" items={profile.skills.ai.frameworks} />
+            <DevOpsCloud
+              title="AI Frameworks"
+              items={profile.skills.ai.frameworks}
+            />
             <DevOpsCloud title="AI Services" items={profile.skills.ai.nlp} />
+          </div>
+        </div>
+        <div className="devops-section">
+          <h3>DevOps & Cloud</h3>
+          <div className="cloud-providers">
+            <DevOpsCloud
+              title="Azure Services"
+              items={profile.skills.devops.azure}
+            />
+            <DevOpsCloud
+              title="DevOps Tools"
+              items={profile.skills.devops.tools}
+            />
           </div>
         </div>
       </div>
@@ -110,4 +118,4 @@ const Skills = () => {
   );
 };
 
-export default Skills; 
+export default Skills;

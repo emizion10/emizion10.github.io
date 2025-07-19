@@ -98,9 +98,6 @@ const Hero = () => {
           <a href={profile.social.github} target="_blank" rel="noopener noreferrer">
             <i className="fab fa-github"></i>
           </a>
-          <a href={profile.social.twitter} target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-twitter"></i>
-          </a>
         </motion.div>
       </div>
       
