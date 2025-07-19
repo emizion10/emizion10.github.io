@@ -12,6 +12,7 @@ export const profile = {
   social: {
     linkedin: "https://linkedin.com/in/amal-sukumaran",
     github: "https://github.com/emizion10",
+    email: "amalsukumaran17@gmail.com",
   },
   experience: [
     {

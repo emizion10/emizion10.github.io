@@ -4,6 +4,11 @@ import { profile } from '../../data/profile';
 import './Hero.css';
 
 const Hero = () => {
+  const handleMailClick = (e) => {
+    e.preventDefault();
+    window.location.href = `mailto:${profile.social.email}`;
+  };
+
   return (
     <motion.section 
       className="hero"
@@ -83,7 +88,13 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.8 }}
         >
           <a href="#projects" className="primary-btn">View My Work</a>
-          <a href="#contact" className="secondary-btn">Contact Me</a>
+          <a 
+            href={`mailto:${profile.social.email}`} 
+            className="primary-btn"
+            onClick={handleMailClick}
+          >
+            Contact Me
+          </a>
         </motion.div>
         
         <motion.div 
