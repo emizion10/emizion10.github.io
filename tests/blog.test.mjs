@@ -49,10 +49,15 @@ test('static build publishes Markdown routes and excludes drafts and scheduled p
     });
     const article = readFileSync(join(output, 'blog', fixtures[0].slug, 'index.html'), 'utf8');
     assert.ok(article.includes('<strong>Markdown</strong>'));
-    assert.ok(article.includes(`https://emizion10.github.io/blog/${fixtures[0].slug}/`));
+    assert.ok(article.includes(`https://profile.amalsukumaran.de/blog/${fixtures[0].slug}/`));
     assert.ok(article.includes('id="a-real-heading"'));
     assert.ok(!existsSync(join(output, 'blog', fixtures[1].slug)));
     assert.ok(!existsSync(join(output, 'blog', fixtures[2].slug)));
+    // Impossible calendar dates must fail rather than silently shifting dates.
+    writeFileSync(files[0], '---\ntitle: "Invalid date"\ndescription: "Invalid metadata must fail"\ndate: "2000-02-30"\n---\nBody\n');
+    const invalid = spawnSync(process.execPath, [join(root, 'node_modules/astro/bin/astro.mjs'), 'build', '--outDir', output], { cwd: root, encoding: 'utf8' });
+    assert.notEqual(invalid.status, 0, 'Invalid post metadata must stop the build');
+    assert.match(invalid.stdout + invalid.stderr, /date/);
   } finally {
     files.forEach((file) => rmSync(file, { force: true }));
     rmSync(output, { recursive: true, force: true });

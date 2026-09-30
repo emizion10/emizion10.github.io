@@ -52,7 +52,7 @@ A writing workflow can stay small:
 
 Use descriptive alternative text so images make sense to readers using assistive technology.
 
-![Amal outdoors in a snowy landscape](/images/profile.jpeg)
+![Amal outdoors in a snowy landscape](/images/profile.webp)
 
 ---
 
