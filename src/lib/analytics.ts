@@ -1,3 +1,5 @@
+// Set to false to disable GA4 and its consent controls across the site.
+export const analyticsEnabled = true;
 export const measurementId = 'G-NWDRM59XWV';
 export const consentKey = 'analytics-consent-v1';
 type Choice = 'granted' | 'denied';

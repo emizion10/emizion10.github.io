@@ -34,6 +34,8 @@ Edit `src/data/profile.ts` for your biography, experience, skill groups, educati
 
 GA4 uses measurement ID `G-NWDRM59XWV`, configured in `src/lib/analytics.ts`. No secret, backend, or paid SDK is needed. The tag loads only in production on `amalsukumaran.de`, after a visitor accepts analytics. Local development and production previews never send events. Without JavaScript, analytics stays off.
 
+To turn analytics off, change one line in `src/lib/analytics.ts` to `export const analyticsEnabled = false;`, then rebuild and deploy. This also removes the consent notice and footer privacy control, including for visitors who previously accepted. Change it back to `true` to re-enable analytics with the existing consent rules. The flag affects newly loaded pages after deployment; already-open pages need a refresh.
+
 The consent notice remembers acceptance or rejection in local storage. **Privacy preferences** in the footer lets visitors change their choice. Withdrawal disables tracking, deletes the site's GA cookies, and reloads the page without the tag. Advertising consent remains denied and Google signals and advertising personalization are disabled.
 
 In the Google Analytics web stream, enable **Enhanced measurement** for page views, scrolls, and outbound link clicks. Internal navigation is visible through page views; email links send a custom `email_click` event with `link_location` (`page` or `footer`). Email addresses are not included in that custom event. Incoming query strings and fragments are excluded from the configured page URL.

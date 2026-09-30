@@ -9,34 +9,37 @@
 </section>
 
 <script>
-  import { createAnalytics, consentKey } from '../lib/analytics';
-  // A production build alone is insufficient: previews must never send events.
-  const withdrawn = window.name === 'analytics-consent-withdrawn';
-  if (withdrawn) {
-    window.name = '';
-    try { localStorage.setItem(consentKey, 'denied'); } catch {}
-  }
-  const analytics = createAnalytics(window, document,
-    import.meta.env.PROD && location.hostname === 'amalsukumaran.de', withdrawn);
-  const notice = document.querySelector<HTMLElement>('.analytics-notice')!;
-  const preferences = document.querySelector<HTMLButtonElement>('[data-analytics-preferences]')!;
-  preferences.hidden = false;
-  notice.hidden = analytics.choice !== null;
-  let openedFromFooter = false;
-  preferences.addEventListener('click', () => {
-    openedFromFooter = true;
-    notice.hidden = false;
-    notice.querySelector<HTMLButtonElement>('button')?.focus();
-  });
-  notice.querySelectorAll<HTMLButtonElement>('[data-consent]').forEach(button => {
-    button.addEventListener('click', () => {
-      analytics.choose(button.dataset.consent as 'granted' | 'denied');
-      notice.hidden = true;
-      if (openedFromFooter) preferences.focus();
+  import { analyticsEnabled, createAnalytics, consentKey } from '../lib/analytics';
+  function initializeAnalytics() {
+    // A production build alone is insufficient: previews must never send events.
+    const withdrawn = window.name === 'analytics-consent-withdrawn';
+    if (withdrawn) {
+      window.name = '';
+      try { localStorage.setItem(consentKey, 'denied'); } catch {}
+    }
+    const analytics = createAnalytics(window, document,
+      import.meta.env.PROD && location.hostname === 'amalsukumaran.de', withdrawn);
+    const notice = document.querySelector<HTMLElement>('.analytics-notice')!;
+    const preferences = document.querySelector<HTMLButtonElement>('[data-analytics-preferences]')!;
+    preferences.hidden = false;
+    notice.hidden = analytics.choice !== null;
+    let openedFromFooter = false;
+    preferences.addEventListener('click', () => {
+      openedFromFooter = true;
+      notice.hidden = false;
+      notice.querySelector<HTMLButtonElement>('button')?.focus();
     });
-  });
-  document.addEventListener('click', event => {
-    const link = (event.target as Element | null)?.closest('a');
-    if (link?.getAttribute('href')?.startsWith('mailto:')) analytics.trackEmail(link.closest('footer') ? 'footer' : 'page');
-  });
+    notice.querySelectorAll<HTMLButtonElement>('[data-consent]').forEach(button => {
+      button.addEventListener('click', () => {
+        analytics.choose(button.dataset.consent as 'granted' | 'denied');
+        notice.hidden = true;
+        if (openedFromFooter) preferences.focus();
+      });
+    });
+    document.addEventListener('click', event => {
+      const link = (event.target as Element | null)?.closest('a');
+      if (link?.getAttribute('href')?.startsWith('mailto:')) analytics.trackEmail(link.closest('footer') ? 'footer' : 'page');
+    });
+  }
+  if (analyticsEnabled) initializeAnalytics();
 </script>
