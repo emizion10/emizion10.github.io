@@ -1,7 +1,11 @@
 ---
 import { profile } from '../data/profile';
+import { analyticsEnabled } from '../lib/analytics';
 ---
 <footer class="site-footer">
   <span>© {new Date().getFullYear()} {profile.name}</span>
-  <div><a href={`mailto:${profile.social.email}`}>Say hello <span aria-hidden="true">↗</span></a></div>
+  <div class="footer-links">
+    {analyticsEnabled && <button type="button" data-analytics-preferences hidden>Privacy preferences</button>}
+    <a href={`mailto:${profile.social.email}`}>Say hello <span aria-hidden="true">↗</span></a>
+  </div>
 </footer>

@@ -1,0 +1,45 @@
+<section class="analytics-notice" aria-labelledby="analytics-title" hidden>
+  <h2 id="analytics-title">A little insight, with your permission</h2>
+  <p>I use Google Analytics cookies to understand page visits and link clicks. Google processes this usage data. Analytics stays off unless you accept; you can change your choice in the footer.</p>
+  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google’s privacy policy ↗</a>
+  <div class="analytics-actions">
+    <button type="button" data-consent="denied">Decline analytics</button>
+    <button type="button" data-consent="granted">Accept analytics</button>
+  </div>
+</section>
+
+<script>
+  import { analyticsEnabled, createAnalytics, consentKey } from '../lib/analytics';
+  function initializeAnalytics() {
+    // A production build alone is insufficient: previews must never send events.
+    const withdrawn = window.name === 'analytics-consent-withdrawn';
+    if (withdrawn) {
+      window.name = '';
+      try { localStorage.setItem(consentKey, 'denied'); } catch {}
+    }
+    const analytics = createAnalytics(window, document,
+      import.meta.env.PROD && location.hostname === 'amalsukumaran.de', withdrawn);
+    const notice = document.querySelector<HTMLElement>('.analytics-notice')!;
+    const preferences = document.querySelector<HTMLButtonElement>('[data-analytics-preferences]')!;
+    preferences.hidden = false;
+    notice.hidden = analytics.choice !== null;
+    let openedFromFooter = false;
+    preferences.addEventListener('click', () => {
+      openedFromFooter = true;
+      notice.hidden = false;
+      notice.querySelector<HTMLButtonElement>('button')?.focus();
+    });
+    notice.querySelectorAll<HTMLButtonElement>('[data-consent]').forEach(button => {
+      button.addEventListener('click', () => {
+        analytics.choose(button.dataset.consent as 'granted' | 'denied');
+        notice.hidden = true;
+        if (openedFromFooter) preferences.focus();
+      });
+    });
+    document.addEventListener('click', event => {
+      const link = (event.target as Element | null)?.closest('a');
+      if (link?.getAttribute('href')?.startsWith('mailto:')) analytics.trackEmail(link.closest('footer') ? 'footer' : 'page');
+    });
+  }
+  if (analyticsEnabled) initializeAnalytics();
+</script>

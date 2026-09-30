@@ -1,6 +1,8 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Analytics from '../components/Analytics.astro';
+import { analyticsEnabled } from '../lib/analytics';
 import { profile } from '../data/profile';
 import '../styles/global.css';
 interface Props { title?: string; description?: string; article?: boolean; published?: string; noindex?: boolean }
@@ -46,5 +48,6 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       <main id="main" tabindex="-1"><slot /></main>
       <Footer />
     </div>
+    {analyticsEnabled && <Analytics />}
   </body>
 </html>
