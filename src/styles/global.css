@@ -94,6 +94,19 @@ main:focus { outline: none; }
 .empty-state { padding: 28px 0; }
 .empty-state h2 { font-size: 1.3rem; }
 .empty-state p { color: var(--secondary); font-size: .9rem; margin-top: 10px; }
+.section-link { font-size: .78rem; color: var(--secondary); text-decoration: none; }
+.writing-empty { color: var(--secondary); font-size: .9rem; }
+.post-list { list-style: none; padding: 0; margin: 0; }
+.post-list li + li { border-top: 1px solid var(--border); }
+.post-link { display: block; text-decoration: none; padding: 20px 0; }
+.post-list li:first-child .post-link { padding-top: 0; }
+.post-title-row { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; }
+.post-title-row h3 { font-size: 1rem; font-weight: 500; }
+.post-title-row time { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.post-arrow { color: var(--muted); font-size: .85rem; margin-left: 4px; }
+.post-link p { color: var(--secondary); font-size: .87rem; margin-top: 5px; }
+.preview-badge { display: inline-block; font-size: .65rem; letter-spacing: .2px; color: var(--accent); margin-top: 8px; }
+.rss-link { font-size: .8rem; color: var(--muted); margin-top: 36px; }
 @media (max-width: 600px) {
   .site-shell { padding: 0 24px; }
   .site-header { padding: 22px 0; margin-bottom: 40px; }
@@ -102,6 +115,7 @@ main:focus { outline: none; }
   .portrait { width: 56px; height: 56px; margin-top: 30px; }
   h1 { font-size: 2.2rem; letter-spacing: -1px; }
   .entry-heading { flex-direction: column; gap: 3px; }
+  .post-title-row { flex-direction: column; gap: 3px; }
   .home-section { margin-top: 46px; }
   .skills-list > div { grid-template-columns: 1fr; gap: 3px; margin-top: 19px; }
   .section-note { display: none; }

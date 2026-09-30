@@ -1,6 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { profile } from '../data/profile';
+import PostList from '../components/PostList.astro';
+import { getPosts } from '../lib/posts';
+const posts = (await getPosts()).slice(0, 3);
 ---
 <BaseLayout>
   <section class="intro" id="about" aria-labelledby="intro-heading">
@@ -43,5 +46,9 @@ import { profile } from '../data/profile';
       <p class="institution">{education.institution}</p>
       <p class="education-detail">{education.detail}</p>
     </div>)}</div>
+  </section>
+  <section class="home-section" id="writing" aria-labelledby="writing-heading">
+    <div class="section-heading"><h2 id="writing-heading">Writing</h2><a class="section-link" href="/blog/">All posts <span aria-hidden="true">↗</span></a></div>
+    {posts.length ? <PostList posts={posts} /> : <p class="writing-empty">A place for notes on software, AI, and what I’m learning. New posts coming soon.</p>}
   </section>
 </BaseLayout>
