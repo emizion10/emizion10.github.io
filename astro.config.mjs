@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://profile.amalsukumaran.de',
+  site: 'https://amalsukumaran.de',
   output: 'static',
   trailingSlash: 'always',
   integrations: [sitemap({ filter: (page) => !page.endsWith('/404/') })],

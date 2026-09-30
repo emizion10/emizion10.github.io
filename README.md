@@ -1,6 +1,6 @@
 # Amal Sukumaran’s personal site
 
-A static personal website and Markdown blog, built with Astro, TypeScript, and plain CSS. Hosted on GitHub Pages at **https://profile.amalsukumaran.de**.
+A static personal website and Markdown blog, built with Astro, TypeScript, and plain CSS. Hosted on GitHub Pages at **https://amalsukumaran.de**.
 
 The homepage contains an introduction, experience, skills, education, and recent writing. Articles have their own URLs. There is no database, backend, or client-side router.
 
@@ -88,13 +88,13 @@ tests/                       Publication and static-build checks
 
 ## GitHub Pages migration
 
-The verified repository default branch is `main`. The previous site was published from `gh-pages`, and Pages already has the custom domain `profile.amalsukumaran.de`. This migration preserves the domain in `public/CNAME`, canonical URLs, RSS, and the sitemap. No base path is needed.
+The verified repository default branch is `main`. The primary domain is `amalsukumaran.de`. The code uses this domain in `public/CNAME`, canonical URLs, RSS, social previews, and the sitemap. No base path is needed. Configure GitHub Pages and DNS for this domain.
 
 For the first deployment:
 
 1. Review `feat/revamp` and its local production preview.
 2. Merge the migration into `main`.
-3. In **Settings → Pages → Build and deployment**, switch **Source** to **GitHub Actions**, retaining the existing custom domain.
+3. In **Settings → Pages → Build and deployment**, switch **Source** to **GitHub Actions** and set **Custom domain** to `amalsukumaran.de`. Configure the root domain and `www` DNS records for GitHub Pages, then enable HTTPS when available.
 4. Run **Check and deploy personal site** from the Actions tab on `main` if the merge-triggered deployment ran before the Pages source changed.
 5. Verify the homepage, `/blog/`, a published article opened directly, `/rss.xml`, and the custom 404 page on the live domain.
 
