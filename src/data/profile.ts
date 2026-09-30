@@ -3,7 +3,7 @@ export const profile = {
   title: 'Software Engineer',
   description: 'Software engineer building web and mobile applications, backend services, and AI agents. My experience, background, and writing.',
   intro: 'I build web and mobile applications, backend services, and AI agents. I enjoy connecting the pieces — from a thoughtful interface to the systems that make it work.',
-  about: 'Currently, I work at CibusCell Technology GmbH, building software for the hydrogen industry. Before that, I worked on web and mobile products at KeyValue Software Systems. I have a master’s in Computer Science from RPTU in Germany, where my thesis explored crop disease prediction with limited data.',
+  about: 'Currently, I’m a Full Stack Engineer at vivenu in Darmstadt, Germany. Previously, I built software for the hydrogen industry at CibusCell Technology GmbH and web and mobile products at KeyValue Software Systems. I have a master’s in Computer Science from RPTU in Germany, where my thesis explored crop disease prediction with limited data.',
   interests: 'My interests sit at the intersection of full-stack development, AI, and cloud architecture. I like working on problems where software can have a practical impact.',
   social: {
     github: 'https://github.com/emizion10',
@@ -12,12 +12,22 @@ export const profile = {
   },
   experience: [
     {
+      company: 'vivenu',
+      roles: [
+        {
+          title: 'Full Stack Engineer',
+          period: 'Feb 2026 — Present',
+          description: 'Working with React and React Native in a full-time, on-site role in Darmstadt, Germany.',
+        },
+      ],
+    },
+    {
       company: 'CibusCell Technology GmbH',
       roles: [
         {
           title: 'Software Engineer',
-          period: 'Nov 2024 — Present',
-          description: 'Developing an AI chatbot with Semantic Kernel and Azure OpenAI. Building scalable NestJS services with Redis caching, improving backend performance by 30%.',
+          period: 'Nov 2024 — Jan 2026',
+          description: 'Led the development of AI-powered features, building a multi-agent chatbot with Semantic Kernel, Azure OpenAI, Azure AI Search, and RAG for context-aware interactions. Built scalable NestJS services with Redis caching, improving backend performance by 30%.',
         },
         {
           title: 'Software Engineer · Part-time',
