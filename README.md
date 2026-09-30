@@ -88,7 +88,7 @@ tests/                       Publication and static-build checks
 
 ## GitHub Pages migration
 
-The verified repository default branch is `main`. The site previously used `profile.amalsukumaran.de`; the new primary domain is `amalsukumaran.de`. The code uses the new domain in `public/CNAME`, canonical URLs, RSS, social previews, and the sitemap. No base path is needed. GitHub Pages and DNS must be configured separately to complete the domain change.
+The verified repository default branch is `main`. The primary domain is `amalsukumaran.de`. The code uses this domain in `public/CNAME`, canonical URLs, RSS, social previews, and the sitemap. No base path is needed. Configure GitHub Pages and DNS for this domain.
 
 For the first deployment:
 
@@ -96,8 +96,7 @@ For the first deployment:
 2. Merge the migration into `main`.
 3. In **Settings → Pages → Build and deployment**, switch **Source** to **GitHub Actions** and set **Custom domain** to `amalsukumaran.de`. Configure the root domain and `www` DNS records for GitHub Pages, then enable HTTPS when available.
 4. Run **Check and deploy personal site** from the Actions tab on `main` if the merge-triggered deployment ran before the Pages source changed.
-5. Configure an HTTPS redirect from `profile.amalsukumaran.de` to `amalsukumaran.de` through your DNS/hosting provider’s redirect service, preserving paths so existing article links work. A DNS record alone does not provide an HTTP redirect.
-6. Verify the homepage, `/blog/`, a published article opened directly, `/rss.xml`, the old-domain redirect, and the custom 404 page on the live domain.
+5. Verify the homepage, `/blog/`, a published article opened directly, `/rss.xml`, and the custom 404 page on the live domain.
 
 Pull requests to `main` test and build without deploying. Pushes to `main` and manual workflow runs on `main` publish only after checks pass. Manual runs on other branches do not deploy.
 
