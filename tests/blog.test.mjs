@@ -49,7 +49,7 @@ test('static build publishes Markdown routes and excludes drafts and scheduled p
     });
     const article = readFileSync(join(output, 'blog', fixtures[0].slug, 'index.html'), 'utf8');
     assert.ok(article.includes('<strong>Markdown</strong>'));
-    assert.ok(article.includes(`https://profile.amalsukumaran.de/blog/${fixtures[0].slug}/`));
+    assert.ok(article.includes(`https://amalsukumaran.de/blog/${fixtures[0].slug}/`));
     assert.ok(article.includes('id="a-real-heading"'));
     assert.ok(!existsSync(join(output, 'blog', fixtures[1].slug)));
     assert.ok(!existsSync(join(output, 'blog', fixtures[2].slug)));

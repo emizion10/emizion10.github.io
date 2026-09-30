@@ -1,3 +1,3 @@
 User-agent: *
 Disallow:
-Sitemap: https://profile.amalsukumaran.de/sitemap-index.xml
+Sitemap: https://amalsukumaran.de/sitemap-index.xml
