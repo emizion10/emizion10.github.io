@@ -1,0 +1,26 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import type { CollectionEntry } from 'astro:content';
+import type { MarkdownHeading } from 'astro';
+import { formatDate, isPublished, readingTime } from '../lib/post-utils';
+import '../styles/article.css';
+interface Props { post: CollectionEntry<'blog'>; headings: MarkdownHeading[] }
+const { post, headings } = Astro.props;
+const unpublished = !isPublished(post.data);
+const contents = headings.filter((heading) => heading.depth === 2);
+---
+<BaseLayout title={post.data.title} description={post.data.description} article published={post.data.date.toISOString()} noindex={unpublished}>
+  <article>
+    <a class="back-link" href="/blog/">← All writing</a>
+    {unpublished && <aside class="preview-notice">{post.data.draft ? 'Draft' : 'Scheduled post'} — visible only in local development. This page is excluded from the production build.</aside>}
+    <header class="article-heading">
+      <div class="article-meta"><time datetime={post.data.date.toISOString().slice(0, 10)}>{formatDate(post.data.date)}</time><span aria-hidden="true">·</span><span>{readingTime(post.body)} min read</span></div>
+      <h1>{post.data.title}</h1>
+      <p>{post.data.description}</p>
+      {post.data.tags.length > 0 && <ul class="article-tags" aria-label="Topics">{post.data.tags.map((tag) => <li>{tag}</li>)}</ul>}
+    </header>
+    {contents.length > 2 && <details class="table-of-contents"><summary>On this page</summary><ul>{contents.map((heading) => <li><a href={`#${heading.slug}`}>{heading.text}</a></li>)}</ul></details>}
+    <div class="prose"><slot /></div>
+    <div class="article-end"><span>Thanks for reading.</span><a href="/blog/">← More writing</a></div>
+  </article>
+</BaseLayout>

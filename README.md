@@ -1,147 +1,109 @@
-# Personal Portfolio & Blog
+# Amal Sukumaran’s personal site
 
-A modern, animated portfolio and blog website built with React. This single-page application showcases professional experience, skills, and blog posts with smooth animations and responsive design.
+A static personal website and Markdown blog, built with Astro, TypeScript, and plain CSS. Hosted on GitHub Pages at **https://profile.amalsukumaran.de**.
 
-![Portfolio Preview](https://via.placeholder.com/800x400?text=Portfolio+Preview)
+The homepage contains an introduction, experience, skills, education, and recent writing. Articles have their own URLs. There is no database, backend, or client-side router.
 
-## Features
+## Local development
 
-- 🎨 Modern UI with smooth animations using Framer Motion
-- 📱 Fully responsive design for all devices
-- 🧩 Component-based architecture for easy maintenance
-- 📝 Blog section with expandable posts
-- 🔗 Social media integration
-- 🌓 Custom scrollbar and smooth scrolling
-- 🚀 Optimized for GitHub Pages deployment
+Use Node.js 24 LTS (the version in `.nvmrc`). Node 22.19+ is also supported. The previous CRA project's Node 20 setup is too old for this version of Astro.
 
-## Sections
-
-- **Hero** - Eye-catching introduction with animated elements
-- **About** - Personal bio and introduction
-- **Experience** - Work history with timeline
-- **Education** - Academic background
-- **Projects** - Showcase of personal and professional projects
-- **Skills** - Technical skills organized by category
-- **Blog** - Collection of articles with modal view
-- **Footer** - Contact information and social links
-
-## Installation
-
-### Prerequisites
-
-- Node.js (v14 or later)
-- npm or yarn
-
-### Setup
-
-1. Clone the repository
-bash
-git clone https://github.com/yourusername/portfolio-blog.git
-cd portfolio-blog
-
-2. Install dependencies
-bash
-npm install
-or
-yarn install
-
-3. Start the development server
-bash
-npm start
-or
-yarn start
-
-
-4. Open your browser and visit `http://localhost:3000`
-
-## Customization
-
-### Personal Information
-
-Edit the data files in the `src/data` directory:
-
-- `profile.js` - Personal details, experience, education, skills, and projects
-- `blogs.js` - Blog posts content
-
-### Styling
-
-- Global styles are in `src/App.css`
-- Component-specific styles are in their respective CSS files
-- Color scheme can be modified by changing the CSS variables
-
-### Adding New Blog Posts
-
-Add new entries to the `blogs` array in `src/data/blogs.js`:
-javascript
-{
-id: 2, // Increment this for each new post
-title: "Your Blog Title",
-date: "YYYY-MM-DD",
-summary: "A brief summary of your blog post...",
-content: "Full content of your blog post...",
-tags: ["Tag1", "Tag2", "Tag3"]
-}
-
-## Deployment to GitHub Pages
-
-### First-time setup
-
-1. Install the GitHub Pages package as a dev dependency:
-```bash
-npm install --save-dev gh-pages
-# or
-yarn add --dev gh-pages
+```sh
+nvm install
+nvm use
+npm ci
+npm run dev
 ```
 
-2. Update the `package.json` file:
-   - Add your GitHub Pages URL as the homepage: 
-     ```
-     "homepage": "https://yourusername.github.io/portfolio-blog"
-     ```
-   - Add deployment scripts:
-     ```
-     "predeploy": "npm run build",
-     "deploy": "gh-pages -d build"
-     ```
+Open `http://localhost:4321`. Development includes drafts and future-dated posts, clearly labeled as local previews. The theme follows the system preference until you select a theme, then remembers your choice.
 
-3. Configure React Router for GitHub Pages by updating `src/App.js`:
-   - Use `HashRouter` instead of `BrowserRouter` or set the `basename` prop:
-     ```jsx
-     <Router basename="/portfolio-blog">
-     ```
-
-### Deployment
-
-Run the deploy command:
-```bash
-npm run deploy
-# or
-yarn deploy
+```sh
+npm run check    # Astro and TypeScript diagnostics
+npm test         # Publication rules and static-build integration checks
+npm run build    # Type checks and production output in dist/
+npm run preview  # Serve the production build locally
 ```
 
-This will build your app and publish it to the `gh-pages` branch of your repository.
+The production preview excludes drafts, just like the deployed site.
 
-### GitHub Repository Settings
+## Updating the homepage
 
-1. Go to your repository on GitHub
-2. Navigate to Settings > Pages
-3. Ensure the source is set to the `gh-pages` branch
-4. Your site will be published at `https://yourusername.github.io/`
+Edit `src/data/profile.ts` for your biography, experience, skill groups, education, and social links. Edit `src/styles/global.css` for typography, colors, spacing, and responsive layouts. Both themes use shared CSS tokens.
 
-## Browser Compatibility
+## Writing a post
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+Create a file directly inside `src/content/blog/`. Use a unique lowercase filename with hyphens, such as `building-useful-ai-agents.md`. The filename becomes the URL: `/blog/building-useful-ai-agents/`. Keep filenames stable after publishing to preserve links.
 
-## License
+```markdown
+---
+title: "Building useful AI agents"
+description: "Lessons from designing agent-based applications."
+date: "2026-09-30"
+tags: ["AI", "Engineering"]
+draft: true
+---
 
-MIT License
+Your article starts here.
 
-## Acknowledgements
+## A section heading
 
-- [React](https://reactjs.org/)
-- [React Router](https://reactrouter.com/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [Font Awesome](https://fontawesome.com/)
+Write ordinary Markdown, with links, lists, images, tables, and fenced code.
+```
+
+`title`, `description`, and `date` are required. Quote the date and use a valid `YYYY-MM-DD` calendar date. `tags` defaults to an empty list; `draft` defaults to `false`. Invalid metadata and filenames fail the build.
+
+Preview locally, then set `draft: false`, commit, and push to `main` to publish. Published posts appear newest first on the archive; the newest three appear on the homepage. RSS and the sitemap update automatically.
+
+Future dates are evaluated at midnight UTC. A future-dated post stays out until a build runs on or after that date. There is no automatic scheduled rebuild: push a change or run the deployment workflow manually when the post is due.
+
+The included `writing-with-markdown.md` is a **draft example** for previewing the layout. Replace or delete it when you have your own writing. It is excluded from production HTML, article routes, RSS, and the sitemap.
+
+### Images and code
+
+Put web-sized images in `public/images/` and reference them using root-relative URLs:
+
+```markdown
+![Describe what the image shows](/images/my-image.webp)
+```
+
+Use a language label on fenced code blocks for syntax highlighting. Article images scale with the page; wide tables and code blocks scroll within the reading column. Articles with three or more second-level headings receive a collapsible table of contents.
+
+## Repository structure
+
+```text
+.github/workflows/deploy.yml  Checks and GitHub Pages deployment
+astro.config.mjs             Canonical URL and static build settings
+src/assets/                  Original portrait and editable social image source
+src/components/              Shared header, footer, and post list
+src/content/blog/            Markdown articles
+src/content.config.ts        Validated blog collection
+src/data/profile.ts          Homepage content
+src/layouts/                 Page shell and article layout
+src/lib/                     Post queries, publication rules, and date helpers
+src/pages/                   Homepage, archive, articles, RSS, and 404
+src/styles/                  Theme styles and Markdown typography
+public/                      Icons, optimized images, robots.txt, and CNAME
+tests/                       Publication and static-build checks
+```
+
+## GitHub Pages migration
+
+The verified repository default branch is `main`. The previous site was published from `gh-pages`, and Pages already has the custom domain `profile.amalsukumaran.de`. This migration preserves the domain in `public/CNAME`, canonical URLs, RSS, and the sitemap. No base path is needed.
+
+For the first deployment:
+
+1. Review `feat/revamp` and its local production preview.
+2. Merge the migration into `main`.
+3. In **Settings → Pages → Build and deployment**, switch **Source** to **GitHub Actions**, retaining the existing custom domain.
+4. Run **Check and deploy personal site** from the Actions tab on `main` if the merge-triggered deployment ran before the Pages source changed.
+5. Verify the homepage, `/blog/`, a published article opened directly, `/rss.xml`, and the custom 404 page on the live domain.
+
+Pull requests to `main` test and build without deploying. Pushes to `main` and manual workflow runs on `main` publish only after checks pass. Manual runs on other branches do not deploy.
+
+The workflow uses GitHub's Pages artifact deployment, replacing the old `gh-pages` npm script. No repository secrets are needed. The previous `gh-pages` branch is left intact for rollback: restoring the old Pages branch source returns to the previous deployment.
+
+## Validation
+
+`npm test` builds temporary published, draft, and future-dated fixtures and verifies article output, homepage/archive links, RSS, and sitemap inclusion. It also verifies that invalid calendar dates fail the build. Fixtures and temporary build output are cleaned up afterward.
+
+The design has been checked in a browser at desktop and mobile widths, including theme persistence, article navigation, table-of-contents anchors, Markdown rendering, and page overflow.

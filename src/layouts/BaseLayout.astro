@@ -1,0 +1,50 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { profile } from '../data/profile';
+import '../styles/global.css';
+interface Props { title?: string; description?: string; article?: boolean; published?: string; noindex?: boolean }
+const { title = profile.name, description = profile.description, article = false, published, noindex = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#faf9f6" />
+    <title>{title === profile.name ? `${title} — Software Engineer` : `${title} · ${profile.name}`}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate" type="application/rss+xml" title="Amal Sukumaran — Writing" href="/rss.xml" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={article ? 'article' : 'website'} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={profile.name} />
+    <meta property="og:image" content={new URL('/social.png', Astro.site)} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Amal Sukumaran — Software Engineer. Web, mobile, and AI." />
+    <meta name="twitter:card" content="summary_large_image" />
+    {published && <meta property="article:published_time" content={published} />}
+    <script is:inline>
+      (() => {
+        let theme;
+        try { theme = localStorage.getItem('theme'); } catch {}
+        document.documentElement.dataset.theme = theme === 'dark' || theme === 'light'
+          ? theme : matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <Header />
+      <main id="main" tabindex="-1"><slot /></main>
+      <Footer />
+    </div>
+  </body>
+</html>

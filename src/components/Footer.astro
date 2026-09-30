@@ -1,0 +1,7 @@
+---
+import { profile } from '../data/profile';
+---
+<footer class="site-footer">
+  <span>© {new Date().getFullYear()} {profile.name}</span>
+  <div><a href={`mailto:${profile.social.email}`}>Say hello <span aria-hidden="true">↗</span></a></div>
+</footer>

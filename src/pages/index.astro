@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { profile } from '../data/profile';
+import PostList from '../components/PostList.astro';
+import { getPosts } from '../lib/posts';
+const posts = (await getPosts()).slice(0, 3);
+---
+<BaseLayout>
+  <section class="intro" id="about" aria-labelledby="intro-heading">
+    <div class="intro-heading">
+      <div>
+        <p class="eyebrow">SOFTWARE ENGINEER</p>
+        <h1 id="intro-heading">Amal Sukumaran<span class="accent">.</span></h1>
+      </div>
+      <img class="portrait" src="/images/portrait.webp" width="240" height="240" alt="Amal Sukumaran" fetchpriority="high" />
+    </div>
+    <p class="intro-lead">{profile.intro}</p>
+    <p>{profile.about}</p>
+    <p>{profile.interests}</p>
+    <div class="social-links" aria-label="Find me online">
+      <a href={profile.social.github}>GitHub <span aria-hidden="true">↗</span></a>
+      <a href={profile.social.linkedin}>LinkedIn <span aria-hidden="true">↗</span></a>
+      <a href={`mailto:${profile.social.email}`}>Email <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+  <section class="home-section" id="experience" aria-labelledby="experience-heading">
+    <div class="section-heading"><h2 id="experience-heading">Experience</h2><span class="section-note">The journey so far</span></div>
+    <div class="experience-list">
+      {profile.experience.map((company) => <div class="company">
+        <h3>{company.company}</h3>
+        <div class="role-list">{company.roles.map((role) => <div class="role">
+          <div class="entry-heading"><h4>{role.title}</h4><span class="period">{role.period}</span></div>
+          <p>{role.description}</p>
+        </div>)}</div>
+      </div>)}
+    </div>
+  </section>
+  <section class="home-section" id="skills" aria-labelledby="skills-heading">
+    <div class="section-heading"><h2 id="skills-heading">What I work with</h2></div>
+    <dl class="skills-list">{profile.skills.map((skill) => <div><dt>{skill.category}</dt><dd>{skill.items}</dd></div>)}</dl>
+  </section>
+  <section class="home-section" id="education" aria-labelledby="education-heading">
+    <div class="section-heading"><h2 id="education-heading">Education</h2></div>
+    <div class="education-list">{profile.education.map((education) => <div class="education-entry">
+      <div class="entry-heading"><h3>{education.degree}</h3><span class="period">{education.period}</span></div>
+      <p class="institution">{education.institution}</p>
+      <p class="education-detail">{education.detail}</p>
+    </div>)}</div>
+  </section>
+  <section class="home-section" id="writing" aria-labelledby="writing-heading">
+    <div class="section-heading"><h2 id="writing-heading">Writing</h2><a class="section-link" href="/blog/">All posts <span aria-hidden="true">↗</span></a></div>
+    {posts.length ? <PostList posts={posts} /> : <p class="writing-empty">A place for notes on software, AI, and what I’m learning. New posts coming soon.</p>}
+  </section>
+</BaseLayout>

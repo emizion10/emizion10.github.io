@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostList from '../../components/PostList.astro';
+import { getPosts } from '../../lib/posts';
+const posts = await getPosts();
+---
+<BaseLayout title="Blog" description="Notes on software, AI, and things I learn along the way.">
+  <div class="page-heading"><p class="eyebrow">NOTES & IDEAS</p><h1>Writing<span class="accent">.</span></h1><p>On software, AI, and things I learn along the way.</p></div>
+  {posts.length ? <PostList posts={posts} /> : <div class="empty-state"><h2>A space for thinking out loud.</h2><p>New posts will appear here. Until then, you can find me on <a href="https://github.com/emizion10">GitHub</a>.</p></div>}
+  <p class="rss-link"><a href="/rss.xml">Follow via RSS <span aria-hidden="true">↗</span></a></p>
+</BaseLayout>
