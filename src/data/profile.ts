@@ -17,7 +17,7 @@ export const profile = {
         {
           title: 'Full Stack Engineer',
           period: 'Feb 2026 — Present',
-          description: 'Developing vivenu’s API-first ticketing platform with React Native, React, Go, and Node.js.',
+          description: 'vivenu builds an API-first ticketing platform. I work on the platform’s development with React Native, React, Go, and Node.js.',
         },
       ],
     },
@@ -27,12 +27,12 @@ export const profile = {
         {
           title: 'Software Engineer',
           period: 'Nov 2024 — Jan 2026',
-          description: 'Built AI-powered features and a multi-agent chatbot with Semantic Kernel, Azure OpenAI, Azure AI Search, and RAG.',
+          description: 'Built software for the hydrogen industry, leading the development of a multi-agent chatbot with Semantic Kernel, Azure OpenAI, Azure AI Search, and RAG. Developed NestJS backend services with Redis caching.',
         },
         {
           title: 'Software Engineer · Part-time',
           period: 'May 2022 — Oct 2024',
-          description: 'Developed React interfaces and NestJS services, with Azure infrastructure and CI/CD pipelines.',
+          description: 'Worked on CibusCell’s hydrogen platform, building React interfaces and NestJS backend services. Set up Azure infrastructure and CI/CD pipelines to support the application.',
         },
       ],
     },
@@ -42,12 +42,12 @@ export const profile = {
         {
           title: 'Software Engineer',
           period: 'Oct 2021 — Mar 2022',
-          description: 'Built web and mobile applications with React, React Native, NestJS, and GraphQL.',
+          description: 'Developed web and mobile products with React, React Native, NestJS, and GraphQL. Built a learning academy and merchant-to-merchant referral features.',
         },
         {
           title: 'Associate Software Engineer',
           period: 'Aug 2020 — Sep 2021',
-          description: 'Built and tested reusable React Native components, with analytics and third-party integrations.',
+          description: 'Built reusable React Native component libraries for mobile applications using test-driven development. Integrated analytics, monitoring, and services including Firebase and Google Maps.',
         },
       ],
     },
