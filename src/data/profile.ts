@@ -2,9 +2,9 @@ export const profile = {
   name: 'Amal Sukumaran',
   title: 'Software Engineer',
   description: 'Software engineer building web and mobile applications, backend services, and AI agents. My experience, background, and writing.',
-  intro: 'I build web and mobile applications, backend services, and AI agents. I enjoy connecting the pieces — from a thoughtful interface to the systems that make it work.',
-  about: 'Currently, I’m a Full Stack Engineer at vivenu in Darmstadt, Germany. Previously, I built software for the hydrogen industry at CibusCell Technology GmbH and web and mobile products at KeyValue Software Systems. I have a master’s in Computer Science from RPTU in Germany, where my thesis explored crop disease prediction with limited data.',
-  interests: 'My interests sit at the intersection of full-stack development, AI, and cloud architecture. I like working on problems where software can have a practical impact.',
+  intro: 'Full-time software developer, part-time traveller. I like building software and exploring new places.',
+  about: 'I’m a Full Stack Engineer at vivenu in Darmstadt, Germany, with a master’s in Computer Science from RPTU. My work spans web and mobile applications, backend services, and AI agents.',
+  interests: 'Away from the keyboard, I enjoy reading books, watching films, and watching and playing football, cricket, and other sports.',
   social: {
     github: 'https://github.com/emizion10',
     linkedin: 'https://linkedin.com/in/amal-sukumaran',
@@ -17,7 +17,7 @@ export const profile = {
         {
           title: 'Full Stack Engineer',
           period: 'Feb 2026 — Present',
-          description: 'Working with React and React Native in a full-time, on-site role in Darmstadt, Germany.',
+          description: 'Developing vivenu’s API-first ticketing platform with React Native, React, Go, and Node.js.',
         },
       ],
     },
@@ -27,12 +27,12 @@ export const profile = {
         {
           title: 'Software Engineer',
           period: 'Nov 2024 — Jan 2026',
-          description: 'Led the development of AI-powered features, building a multi-agent chatbot with Semantic Kernel, Azure OpenAI, Azure AI Search, and RAG for context-aware interactions. Built scalable NestJS services with Redis caching, improving backend performance by 30%.',
+          description: 'Built AI-powered features and a multi-agent chatbot with Semantic Kernel, Azure OpenAI, Azure AI Search, and RAG.',
         },
         {
           title: 'Software Engineer · Part-time',
           period: 'May 2022 — Oct 2024',
-          description: 'Built backend services and modular React interfaces. Configured Azure infrastructure and CI/CD pipelines, including Application Gateway and Web Application Firewall.',
+          description: 'Developed React interfaces and NestJS services, with Azure infrastructure and CI/CD pipelines.',
         },
       ],
     },
@@ -42,18 +42,18 @@ export const profile = {
         {
           title: 'Software Engineer',
           period: 'Oct 2021 — Mar 2022',
-          description: 'Developed React and React Native applications with NestJS and GraphQL backends. Delivered learning academy and merchant referral features.',
+          description: 'Built web and mobile applications with React, React Native, NestJS, and GraphQL.',
         },
         {
           title: 'Associate Software Engineer',
           period: 'Aug 2020 — Sep 2021',
-          description: 'Built reusable React Native components with test-driven development. Integrated analytics and services including Sentry, CleverTap, Firebase, and Google Maps.',
+          description: 'Built and tested reusable React Native components, with analytics and third-party integrations.',
         },
       ],
     },
   ],
   skills: [
-    { category: 'Languages', items: 'TypeScript, JavaScript, Python, C/C++, Java' },
+    { category: 'Languages', items: 'TypeScript, JavaScript, Python, Go, C/C++, Java' },
     { category: 'Frontend', items: 'React, React Native, Redux, Recoil, Zustand' },
     { category: 'Backend & data', items: 'NestJS, Node.js, Django, GraphQL, REST APIs, PostgreSQL, MySQL, MSSQL, Redis, MongoDB' },
     { category: 'AI', items: 'AI agents, Semantic Kernel, RAG, LangChain, Azure OpenAI, Azure AI Search, Bot Framework' },
