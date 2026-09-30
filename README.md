@@ -30,6 +30,16 @@ The production preview excludes drafts, just like the deployed site.
 
 Edit `src/data/profile.ts` for your biography, experience, skill groups, education, and social links. Edit `src/styles/global.css` for typography, colors, spacing, and responsive layouts. Both themes use shared CSS tokens.
 
+## Analytics
+
+GA4 uses measurement ID `G-NWDRM59XWV`, configured in `src/lib/analytics.ts`. No secret, backend, or paid SDK is needed. The tag loads only in production on `amalsukumaran.de`, after a visitor accepts analytics. Local development and production previews never send events. Without JavaScript, analytics stays off.
+
+The consent notice remembers acceptance or rejection in local storage. **Privacy preferences** in the footer lets visitors change their choice. Withdrawal disables tracking, deletes the site's GA cookies, and reloads the page without the tag. Advertising consent remains denied and Google signals and advertising personalization are disabled.
+
+In the Google Analytics web stream, enable **Enhanced measurement** for page views, scrolls, and outbound link clicks. Internal navigation is visible through page views; email links send a custom `email_click` event with `link_location` (`page` or `footer`). Email addresses are not included in that custom event. Incoming query strings and fragments are excluded from the configured page URL.
+
+After merging and deploying, accept analytics on the live domain and check **Reports → Realtime** for your visit and email event. Ad blockers and visitors declining analytics reduce the recorded totals. Reports other than Realtime can take 24–48 hours to populate. The measurement ID is public and should not be added as a repository secret.
+
 ## Writing a post
 
 Create a file directly inside `src/content/blog/`. Use a unique lowercase filename with hyphens, such as `building-useful-ai-agents.md`. The filename becomes the URL: `/blog/building-useful-ai-agents/`. Keep filenames stable after publishing to preserve links.

@@ -3,5 +3,8 @@ import { profile } from '../data/profile';
 ---
 <footer class="site-footer">
   <span>© {new Date().getFullYear()} {profile.name}</span>
-  <div><a href={`mailto:${profile.social.email}`}>Say hello <span aria-hidden="true">↗</span></a></div>
+  <div class="footer-links">
+    <button type="button" data-analytics-preferences hidden>Privacy preferences</button>
+    <a href={`mailto:${profile.social.email}`}>Say hello <span aria-hidden="true">↗</span></a>
+  </div>
 </footer>
