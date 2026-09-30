@@ -3,7 +3,7 @@ export const profile = {
   title: 'Software Engineer',
   description: 'Software engineer building web and mobile applications, backend services, and AI agents. My experience, background, and writing.',
   intro: 'Full-time software developer, part-time traveller. I like building software and exploring new places.',
-  about: 'I’m a Full Stack Engineer at vivenu in Darmstadt, Germany, with a master’s in Computer Science from RPTU. My work spans web and mobile applications, backend services, and AI agents.',
+  about: 'I’m a Full Stack Engineer at vivenu in Frankfurt, Germany, with a master’s in Computer Science from RPTU. My work spans web and mobile applications, backend services, and AI agents.',
   interests: 'Away from the keyboard, I enjoy reading books, watching films, and watching and playing football, cricket, and other sports.',
   social: {
     github: 'https://github.com/emizion10',
